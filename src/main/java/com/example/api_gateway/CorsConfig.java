@@ -18,24 +18,16 @@ public class CorsConfig {
     @Bean
     public CorsWebFilter corsWebFilter() {
         CorsConfiguration config = new CorsConfiguration();
-        // Allow the exact frontend origin configured in env variables
+        // Allow your frontend origin exactly
         config.setAllowedOrigins(Arrays.asList(allowedOrigin));
-
-        // Allow all headers (you might want to restrict this if needed)
         config.addAllowedHeader(CorsConfiguration.ALL);
-
-        // Allow typical HTTP methods including OPTIONS explicitly
         config.setAllowedMethods(Arrays.asList("GET", "POST", "PUT", "DELETE", "OPTIONS", "PATCH"));
-
-        // Allow credentials (cookies/auth headers)
         config.setAllowCredentials(true);
-
-        // Optionally set max age to cache CORS preflight responses for performance
         config.setMaxAge(3600L);
 
         UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();
 
-        // Apply this configuration to all routes
+        // Apply to all incoming request paths
         source.registerCorsConfiguration("/**", config);
 
         return new CorsWebFilter(source);
