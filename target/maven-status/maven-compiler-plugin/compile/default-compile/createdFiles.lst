@@ -1,4 +1,4 @@
 com\example\api_gateway\ApiGatewayApplication.class
-com\example\api_gateway\security\SecurityConfig.class
 com\example\api_gateway\CorsConfig.class
 com\example\api_gateway\controller\HealthController.class
+SecurityConfig.class

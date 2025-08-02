@@ -1,5 +1,3 @@
-package com.example.api_gateway.security;
-
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.http.HttpMethod;
@@ -17,7 +15,11 @@ public class SecurityConfig {
                 .cors().and()
                 .csrf().disable()
                 .authorizeExchange()
+                // Permit all OPTIONS requests (for CORS preflight)
                 .pathMatchers(HttpMethod.OPTIONS).permitAll()
+                // Permit /ping endpoint without authentication
+                .pathMatchers("/ping").permitAll()
+                // Secure all other endpoints
                 .anyExchange().authenticated()
                 .and()
                 .build();
