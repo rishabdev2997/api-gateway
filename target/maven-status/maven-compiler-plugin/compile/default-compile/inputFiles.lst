@@ -1,3 +1,4 @@
 E:\Rishab\Deploying\train-booking-system\api-gateway\api-gateway\src\main\java\com\example\api_gateway\ApiGatewayApplication.java
 E:\Rishab\Deploying\train-booking-system\api-gateway\api-gateway\src\main\java\com\example\api_gateway\controller\HealthController.java
 E:\Rishab\Deploying\train-booking-system\api-gateway\api-gateway\src\main\java\com\example\api_gateway\CorsConfig.java
+E:\Rishab\Deploying\train-booking-system\api-gateway\api-gateway\src\main\java\com\example\api_gateway\security\SecurityConfig.java
